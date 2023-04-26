@@ -1,9 +1,26 @@
-import Home from "../../components/HomeWrapper";
+import { Container, HomeForm, Main } from './styes'
+import { Header } from '../../components/Header'
+import { FiUsers } from 'react-icons/fi'
 
-export default () => {
+import HomeBgImg from '../../assets/home-bg-img.svg'
+
+export default function Home() {
   return (
-    <Home>
-      <h1>Pagina 2</h1>
-    </Home>
-  );
-};
+    <Container>
+      <Header />
+
+      <Main>
+        <img className='home-bg-img' src={HomeBgImg} />
+
+        <HomeForm>
+          <h2>Crie sua própria sala</h2>
+          <input type="text" placeholder='Insira uma senha' />
+          <button>
+            <FiUsers />
+            Criar sala
+          </button>
+        </HomeForm>
+      </Main>
+    </Container>
+  )
+}
